@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Buy</title>
+    </head>
+    <body>
+        <h3>Buy Book <%= Amount %></h3>
+        <form action="/user-payment" method="post">
+            <input type="text" name="Amount" id="" value="<%= parseInt(Amount)*100 %>" hidden>
+            <input type="text" name="bookName" id="" value="Book-history" hidden>
+            <script
+		           src="//checkout.stripe.com/v2/checkout.js"
+		           class="stripe-button"
+		           data-key="<%= key %>"
+		           data-amount="<%= parseInt(Amount)*100 %>"
+		           data-currency="inr"
+		           data-name="Book"
+		           data-description="History Book"
+		           data-locale="auto" >
+		    </script>
+        </form>
+    </body>
+</html>
